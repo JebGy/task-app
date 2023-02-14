@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Task from "../components/Task";
 
-function Main() {
+function Appmain() {
   const [tasklist, setTasklist] = useState([]);
 
   //load tasks from localstorage
@@ -33,4 +33,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Appmain;
