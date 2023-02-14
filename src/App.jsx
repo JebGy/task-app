@@ -4,12 +4,10 @@ import Appmain from "./pages/Appmain";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="task-app/" element={<Appmain />} />
-        <Route path="task-app/create-task" element={<CreateTask />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Appmain />} />
+      <Route path="/create-task" element={<CreateTask />} />
+    </Routes>
   );
 }
 
