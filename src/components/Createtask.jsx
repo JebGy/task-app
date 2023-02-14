@@ -28,7 +28,7 @@ function CreateTask() {
     }
   };
   if (redirect) {
-    return <Navigate to="/" />;
+    return <Navigate to="/task-app" />;
   }
 
   return (

@@ -16,7 +16,7 @@ function Appmain() {
     <main>
       <header className="app__header">
         <h1 className="app__title">To Do list</h1>
-        <Link to="/create-task" className="create__button" ti>
+        <Link to="/task-app/create-task" className="create__button" ti>
           Create Task
         </Link>
       </header>
