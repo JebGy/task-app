@@ -1,16 +1,11 @@
 import { useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
-function CreateTask() {
+function CreateTask({ setCreateTask, createTask }) {
   const [title, settitle] = useState("");
   const [description, setdescription] = useState("");
-  const [redirect, setredirect] = useState(false);
-
   //add new task to localstorage with uuid and without replace the values of existing list
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  const handleSubmit = () => {
     const data = localStorage.getItem("tasks");
     const tasks = JSON.parse(data);
     const newTask = {
@@ -21,15 +16,12 @@ function CreateTask() {
     };
     if (tasks === null) {
       localStorage.setItem("tasks", JSON.stringify([newTask]));
-      setredirect(true);
     } else {
       localStorage.setItem("tasks", JSON.stringify([...tasks, newTask]));
-      setredirect(true);
     }
+    
   };
-  if (redirect) {
-    return <Navigate to="/task-app" />;
-  }
+
 
   return (
     <div className="form__container">
